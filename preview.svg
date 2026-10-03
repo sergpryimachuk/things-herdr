@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+<rect x="0" width="550" height="420" fill="#ffffff"/>
+<rect x="0" width="155" height="420" fill="#f6f7f8"/>
+<rect x="8" y="115" width="139" height="38" rx="5" fill="#e2e5e9"/>
+<g font-family="Menlo,monospace" font-size="14" fill="#222222">
+<text x="18" y="42">Spaces</text>
+<text x="18" y="99">Development</text>
+<text x="18" y="139">Things themes</text>
+<text x="180" y="42">Things light</text>
+<text x="180" y="104" fill="#4c8ce6">$ git status</text>
+<text x="180" y="140">On branch main</text>
+<text x="180" y="176" fill="#0cb54f">Working tree clean</text>
+<text x="180" y="232" fill="#5a5a5a">Palette illustration</text>
+</g>
+<rect x="180" y="280" width="30" height="30" rx="4" fill="#e4374b"/>
+<rect x="223" y="280" width="30" height="30" rx="4" fill="#0cb54f"/>
+<rect x="266" y="280" width="30" height="30" rx="4" fill="#bd8e37"/>
+<rect x="309" y="280" width="30" height="30" rx="4" fill="#086ddd"/>
+<rect x="352" y="280" width="30" height="30" rx="4" fill="#876be0"/>
+<rect x="395" y="280" width="30" height="30" rx="4" fill="#2db7b5"/>
+<rect x="438" y="280" width="30" height="30" rx="4" fill="#d96c00"/>
+<rect x="550" width="550" height="420" fill="#1c2127"/>
+<rect x="550" width="155" height="420" fill="#181c20"/>
+<rect x="558" y="115" width="139" height="38" rx="5" fill="#2c313c"/>
+<g font-family="Menlo,monospace" font-size="14" fill="#dadada">
+<text x="568" y="42">Spaces</text>
+<text x="568" y="99">Development</text>
+<text x="568" y="139">Things themes</text>
+<text x="730" y="42">Things dark</text>
+<text x="730" y="104" fill="#79a9ec">$ git status</text>
+<text x="730" y="140">On branch main</text>
+<text x="730" y="176" fill="#44cf6e">Working tree clean</text>
+<text x="730" y="232" fill="#bababa">Palette illustration</text>
+</g>
+<rect x="730" y="280" width="30" height="30" rx="4" fill="#fb464c"/>
+<rect x="773" y="280" width="30" height="30" rx="4" fill="#44cf6e"/>
+<rect x="816" y="280" width="30" height="30" rx="4" fill="#e0de71"/>
+<rect x="859" y="280" width="30" height="30" rx="4" fill="#027aff"/>
+<rect x="902" y="280" width="30" height="30" rx="4" fill="#a882ff"/>
+<rect x="945" y="280" width="30" height="30" rx="4" fill="#53dfdd"/>
+<rect x="988" y="280" width="30" height="30" rx="4" fill="#e9973f"/>
+</svg>
