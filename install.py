@@ -15,6 +15,8 @@ def merge(original: str, overlay: str) -> str:
     before = tomllib.loads(original)
     theme = tomllib.loads(overlay)
     assert set(theme) == {"theme"}
+    if before.get("theme") == theme["theme"]:
+        return original
     # Remove only complete theme tables. Validate semantic preservation below,
     # which also rejects unusual inline/dotted theme definitions before writing.
     lines = original.splitlines(keepends=True)
