@@ -6,21 +6,45 @@ A light and dark Herdr adaptation of [Obsidian Things](https://github.com/coline
 
 ## Install
 
-Requires Python 3.11 or newer and a Herdr version with `theme.custom.light` and `theme.custom.dark`. Verified with Herdr 0.9.3. From this repository:
+Clone this repository:
+
+```sh
+git clone https://github.com/sergpryimachuk/things-herdr.git
+cd things-herdr
+```
+
+Requires a Herdr version with `theme.custom.light` and `theme.custom.dark`. Verified with Herdr 0.9.3. Herdr reads these theme tables directly from its configuration, as described in the [official configuration guide](https://herdr.dev/docs/configuration/#theme).
+
+### Manual installation
+
+1. Back up your existing configuration, if present:
+
+   ```sh
+   mkdir -p "$HOME/.config/herdr"
+   if [ -f "$HOME/.config/herdr/config.toml" ]; then
+     cp "$HOME/.config/herdr/config.toml" "$HOME/.config/herdr/config.toml.things-backup-$(date +%Y%m%d-%H%M%S)"
+   fi
+   ```
+
+2. Open `~/.config/herdr/config.toml`, creating it if needed. Replace its existing `[theme]` table and all `[theme.custom...]` tables with the tables from [`theme.toml`](theme.toml). Keep your other sections, including keybindings and terminal settings. Merge these theme tables into the configuration; copying over the entire configuration would discard those preferences. If `HERDR_CONFIG_PATH` points to a custom file, back up and edit that file instead.
+
+3. Inside a Herdr pane, [reload the configuration](https://herdr.dev/docs/configuration/#reload-config) without restarting the server:
+
+   ```sh
+   herdr server reload-config
+   ```
+
+### Optional installer
+
+This repository provides a convenience installer requiring Python 3.11 or newer. It is not provided by Herdr:
 
 ```sh
 python3 install.py
 ```
 
-The installer replaces the theme tables in `~/.config/herdr/config.toml` and preserves other configuration values and comments. It saves a timestamped backup before each change. `HERDR_CONFIG_PATH` is respected; `--config /path/to/config.toml` overrides the destination. Unsupported inline or dotted theme definitions cause a safe refusal before the file changes.
+It replaces the theme tables in `~/.config/herdr/config.toml`, preserves other configuration values and comments, and saves a timestamped backup before each change. `HERDR_CONFIG_PATH` is respected; `--config /path/to/config.toml` overrides the destination. Unsupported inline or dotted theme definitions cause a safe refusal before the file changes.
 
-Inside a Herdr pane, apply the new palette without restarting the server:
-
-```sh
-herdr server reload-config
-```
-
-Or use `python3 install.py --reload` for both steps. The command requires `HERDR_ENV=1` and never stops or restarts the session.
+Reload with `herdr server reload-config` after installing, or use `python3 install.py --reload` inside Herdr for both steps. The combined command requires `HERDR_ENV=1` and never stops or restarts the session.
 
 ## Appearance
 
@@ -32,7 +56,7 @@ Herdr draws its own interface; applications in panes keep their own styles and e
 
 ## Rollback
 
-Copy the timestamped backup printed by the installer over the configuration, then reload inside Herdr:
+Restore the timestamped backup created during manual installation or printed by the installer, then reload inside Herdr. Substitute your actual backup filename:
 
 ```sh
 cp "$HOME/.config/herdr/config.toml.things-backup-YYYYMMDD-HHMMSS-microseconds" "$HOME/.config/herdr/config.toml"
@@ -42,6 +66,7 @@ herdr server reload-config
 ## Sources and license
 
 - [Things source](https://github.com/colineckert/obsidian-things), version 2.2.4. `NOTICE` records the installed source file's SHA-256.
+- [Herdr configuration guide](https://herdr.dev/docs/configuration/) explains native theme overrides and reloading.
 - [Herdr configuration reference](https://herdr.dev/docs/config-reference/) and installed `herdr --default-config` define the supported settings.
 - [Upstream MIT license](https://github.com/colineckert/obsidian-things/blob/main/LICENSE). `LICENSE` preserves its existing Stephan Ango notice. Colin Eckert is credited here and in `NOTICE` as Things' creator.
 
