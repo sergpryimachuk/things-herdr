@@ -26,7 +26,7 @@ Or use `python3 install.py --reload` for both steps. The command requires `HERDR
 
 `theme.toml` overrides all 19 documented Herdr color tokens for both appearances. `auto_switch = true` follows the host terminal's light or dark appearance. Pair it with the Things Ghostty theme using Ghostty's light/dark theme selector. The fallback appearance is light, matching the macOS appearance when this adaptation was created.
 
-The panel, sidebar, neutral surfaces, text, and semantic colors map to Things CSS base and color variables. The accent comes from Things HSL values: `215, 75%, 60%` in light mode and `215, 75%, 70%` for dark text accents. The navigate selection uses that blue at 25% over the sidebar background. Neutral active rows use Things hover and dark base-25 colors.
+The panel, sidebar, neutral surfaces, text, and semantic colors map to Things CSS base and color variables. The accent comes from Things HSL values: `215, 75%, 60%` in light mode and `215, 75%, 70%` for dark text accents. The navigate selection uses the interactive blue `215, 75%, 60%` at 25% over each editor background, matching the shared terminal selections. Herdr uses this composite for its sidebar navigation rows. Neutral active rows use Things hover and dark base-25 colors.
 
 Herdr draws its own interface; applications in panes keep their own styles and explicit ANSI colors. Terminal fonts, syntax highlighting, rounded controls, Obsidian's typography, and spacing cannot be supplied by a Herdr color theme. The SVG illustrates the palette and is not an application screenshot.
 
