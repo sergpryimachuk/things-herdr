@@ -54,6 +54,18 @@ The panel, sidebar, neutral surfaces, text, and semantic colors map to Things CS
 
 Herdr draws its own interface; applications in panes keep their own styles and explicit ANSI colors. Terminal fonts, syntax highlighting, rounded controls, Obsidian's typography, and spacing cannot be supplied by a Herdr color theme. The SVG illustrates the palette and is not an application screenshot.
 
+## Agent CLI colors
+
+Agent CLIs can select their own colors independently of the terminal theme. If Antigravity CLI `agy` displays pale text on a white Things Light background, open `/config`, choose Color Scheme, and select `terminal`. This lets agy use the Things ANSI palette in both appearances.
+
+For future sessions, set only this value in `~/.gemini/antigravity-cli/settings.json`, keeping your other preferences:
+
+```json
+"colorScheme": "terminal"
+```
+
+Changing the file applies to new sessions. Use `/config` in a running session to apply the scheme immediately. Previously rendered scrollback can retain its old colors. See [Antigravity CLI display settings](https://antigravity.google/docs/settings?tab=cli#display-and-rendering).
+
 ## Rollback
 
 Restore the timestamped backup created during manual installation or printed by the installer, then reload inside Herdr. Substitute your actual backup filename:
